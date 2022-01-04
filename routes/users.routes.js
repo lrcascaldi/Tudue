@@ -15,24 +15,22 @@ const {
 } = require("../controllers/users.controllers.js");
 
 // ROUTES
+// specific user actions delete one user
+router.delete("/users/:id", deleteUser);
 
-// create new users
-router.post("/new", createUser);
+// specific user actions update one user
+router.put("/users/:id", updateUser);
 
-console.log("ANTES");
-router.get("/:id", (req, res) => {
+// specific user actions get one user
+router.get("/users/:id", (req, res) => {
   console.log(req.params.id);
 });
-console.log("DEPOIS");
 
-// specific user actions delete one user
-
-router.delete("/:id", deleteUser);
-
-router.put("/:id", updateUser);
+// create new user
+router.post("/users", createUser);
 
 // get all users
-router.get("/", getUsers);
+router.get("/users", getUsers);
 
 // specific user actions = get, update, delete one user
 // router.route("/:id").get(getUser).put(updateUser);

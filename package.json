@@ -1,13 +1,13 @@
 {
-  "name": "todue",
+  "name": "Todue",
   "version": "1.0.0",
-  "description": "",
+  "description": "Fun tasklist app",
   "main": "app.js",
   "scripts": {
     "devStart": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Luiz R. Cascaldi",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^10.0.0",

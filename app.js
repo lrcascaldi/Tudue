@@ -32,9 +32,9 @@ const userRouter = require("./routes/users.routes.js");
 const projectsRouter = require("./routes/projects.js");
 
 // set beginning route of all routers
-app.use("/", homeRouter);
-app.use("/users", userRouter);
 app.use("/projects", projectsRouter);
+app.use("/users", userRouter);
+app.use("/", homeRouter);
 
 // RUN SERVER
 // set app port
