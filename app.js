@@ -1,8 +1,6 @@
 // IMPORTS
 // import express lib
 const express = require("express");
-// imports router
-const router = express.Router();
 // imports mongoDB driver
 const mongoose = require("mongoose");
 // imports dotenv in order to acess config file information
@@ -27,9 +25,9 @@ function logger(req, res, next) {
 }
 
 // import all router modules
-const homeRouter = require("./routes/home.route.js");
+const homeRouter = require("./routes/home.routes.js");
 const userRouter = require("./routes/users.routes.js");
-const projectsRouter = require("./routes/projects.js");
+const projectsRouter = require("./routes/projects.routes.js");
 
 // set beginning route of all routers
 app.use("/", homeRouter);
@@ -40,12 +38,15 @@ app.use("/projects", projectsRouter);
 // set app port
 const port = 3000;
 
-// run the server on specified port
+// connect to database and run the server on specified port
 mongoose.connect(process.env.MONGO_URI).then((result) =>
   app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`App listening at http://localhost:${port}`);
   })
 );
+
+module.exports = port;
+
 //.catch((err) => console.log(Error))
 
 // https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes

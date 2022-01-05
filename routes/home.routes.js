@@ -11,7 +11,8 @@ const router = express.Router();
 // ROUTES
 // example get
 router.get("/", (req, res) => {
-  res.send("Hello world!!");
+  const port = require("../app.js");
+  res.send(`Tudue app listening at http://localhost:${port}`);
 });
 
 // EXPORTS
