@@ -15,7 +15,7 @@ const app = express();
 // MIDDLEWARE SETUPS
 // import middleware responsible for json parsing
 app.use(express.json());
-//app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 // import middleware responsible for registering routes in console log history
 app.use(logger);
@@ -32,9 +32,9 @@ const userRouter = require("./routes/users.routes.js");
 const projectsRouter = require("./routes/projects.js");
 
 // set beginning route of all routers
-app.use("/projects", projectsRouter);
-app.use("/users", userRouter);
 app.use("/", homeRouter);
+app.use("/users", userRouter);
+app.use("/projects", projectsRouter);
 
 // RUN SERVER
 // set app port

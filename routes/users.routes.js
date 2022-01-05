@@ -22,9 +22,7 @@ router.delete("/users/:id", deleteUser);
 router.put("/users/:id", updateUser);
 
 // specific user actions get one user
-router.get("/users/:id", (req, res) => {
-  console.log(req.params.id);
-});
+router.put("/users/:id", getUser);
 
 // create new user
 router.post("/users", createUser);
