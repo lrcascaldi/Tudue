@@ -20,30 +20,30 @@ const createUser = (req, res) => {
 };
 
 // specific user actions = get one user
-//const getUser = (req, res) => {
-//  const userID = req.params.id; // convert to ObjectId
-//  UserModel.findOne({ _id: userID })
-//    .then((result) => res.status(200).json({ result }))
-//    .catch((error) => res.status(404).json({ msg: "User not found" }));
-//};
+const getUser = (req, res) => {
+  const userID = req.params.id; // convert to ObjectId
+  UserModel.findOne({ _id: userID })
+    .then((result) => res.status(200).json({ result }))
+    .catch((error) => res.status(404).json({ msg: "User not found" }));
+};
 
 // specific user actions = get one user
-const getUser = (req, res) => {
-  const userID = ObjectId(req.params.id); // convert to ObjectId
-  console.log(userID);
-  const AllUsers = UserModel.find({});
-  const FindOne = AllUsers.filter((user) => {
-    console.log("UMMM", user.id);
-    console.log("DOISSS", UserID);
-    user.id === userID;
-  });
-  console.log("ALUUUUUUUU: ", FindOne);
-  if (FindOne) {
-    res.status(200).json({ FindOne });
-  } else {
-    res.status(404).json({ msg: "User not found" });
-  }
-};
+//const getUser = (req, res) => {
+//  const userID = ObjectId(req.params.id); // convert to ObjectId
+//  console.log(userID);
+//  const AllUsers = UserModel.find({});
+//  const FindOne = AllUsers.filter((user) => {
+//    console.log("UMMM", user.id);
+//    console.log("DOISSS", UserID);
+//    user.id === userID;
+//  });
+//  console.log("ALUUUUUUUU: ", FindOne);
+//  if (FindOne) {
+//    res.status(200).json({ FindOne });
+//  } else {
+//    res.status(404).json({ msg: "User not found" });
+//  }
+//};
 
 // specific user actions = update one user
 const updateUser = (req, res) => {
